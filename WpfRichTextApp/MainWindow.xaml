@@ -1,0 +1,78 @@
+﻿<Window x:Class="WpfRichTextApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfRichTextApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top"
+              FontSize="16">
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem x:Name="menuSave" Header="Save"/>
+                <MenuItem Header="Open"/>
+                <Separator/>
+                <MenuItem Header="Quit"/>
+            </MenuItem>
+            <MenuItem Header="Font">
+                <MenuItem Header="Bold"/>
+                <MenuItem Header="Italic"/>
+                <MenuItem Header="UnderLine"/>
+                <Separator/>
+                <MenuItem Header="Size"/>
+                <MenuItem Header="Color"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar x:Name="toolsFiles">
+                <Button Height="20">
+                    <Image Source="/new.png"/>
+                </Button>
+                <Button Height="20">
+                    <Image Source="/open.png"/>
+                </Button>
+                <Button x:Name="toolSave" Height="20" Command="Save">
+                    <Image Source="/save.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar x:Name="toolsFonts">
+                <Button Height="20">
+                    <Bold>B</Bold>
+                </Button>
+                <Button Height="20">
+                    <Italic>I</Italic>
+                </Button>
+                <Button Height="20">
+                    <Underline>U</Underline>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        
+        <RichTextBox x:Name="richEditor"/>
+    </DockPanel>
+    
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <RichTextBox Grid.Row="2"
+                     x:Name="richText"/>
+        --><!--<StackPanel Orientation="Horizontal" Height="30">
+            <Button Content="Save" 
+                    Click="Save_Click"
+                    FontSize="20"/>
+            <Button Content="Open" 
+                    Click="Open_Click"
+                    FontSize="20"/>
+            <Button Content="Bold" 
+                    Click="Bold_Click"
+                    FontSize="20"
+                    Margin="30 0 0 0"/>
+            
+        </StackPanel>--><!--
+    </Grid>-->
+</Window>
